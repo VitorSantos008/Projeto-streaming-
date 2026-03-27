@@ -70,11 +70,16 @@ public class StreamingMusicaAluno {
     }
 
     static void listarMusicas() {
-        for (Musica m : musicas) {
-            m.exibir();
-        }
+    if (musicas.isEmpty()) {
+        System.out.println("Nenhuma música cadastrada.");
+        return;
     }
 
+    for (int i = 0; i < musicas.size(); i++) {
+        System.out.print((i + 1) + ". ");
+        musicas.get(i).exibir();
+    }
+}
     static void buscarMusica() {
         System.out.print("Buscar: ");
         String busca = scanner.nextLine();
